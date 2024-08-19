@@ -1,0 +1,24 @@
+[package]
+authors = ["Guillaume Lagrange"]
+edition = "2021"
+version = "0.14.0"
+license = "MIT OR Apache-2.0"
+name = "matmul-web-mwe"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+
+[dependencies]
+burn = { path = "../burn/crates/burn", default-features = false, features = ["wgpu"]}
+
+# Wasm dependencies
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+
+console_error_panic_hook = "0.1.7"
+
+wasm-logger = "0.2"
+log = { default-features = false, version = "0.4.22" }
