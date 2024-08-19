@@ -31,3 +31,11 @@ The correct computation should display:
 Matmul result [2, 2]:
 [10.0, 13.0, 22.0, 29.0]
 ```
+
+Which only happens when the [default matmul strategy](https://github.com/tracel-ai/burn/blob/main/crates/burn-jit/src/kernel/matmul/base.rs#L32) is set to simple. For example:
+```rust
+MatmulStrategy::Simple {
+    grid_x: 16,
+    grid_y: 16,
+}
+```
